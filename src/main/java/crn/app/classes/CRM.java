@@ -73,7 +73,7 @@ public class CRM {
                     String tecla1 = Pantalla.menuPideA_Cancelar(this.opors);
                     Lead lead1 = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla1) - 1));
 
-                    // TODO: Seguir aqui
+                    // TODO: WORKING
 
                     Pantalla.menuMuestra_Convertir(lead1);
 

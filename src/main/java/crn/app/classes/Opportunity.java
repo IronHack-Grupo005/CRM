@@ -12,16 +12,12 @@ public class Opportunity extends Lead {
     Contact decisionMaker;
     Status status;
 
-    Lead lead;
-    // TODO: Esto va fuara ?
-
-    public Opportunity(String name, String phoneNumber, String email, String companyName, Product industry, Contact decisionMaker, Status status, Lead lead) {
+    public Opportunity(String name, String phoneNumber, String email, String companyName, Product industry, Contact decisionMaker, Status status) {
         super(name, phoneNumber, email, companyName);
         this.industry = industry;
         this.decisionMaker = decisionMaker;
         this.status = status;
-        this.lead = lead;
-        this.id++;
+           this.id++;
     }
 
     public static long getId() {
@@ -50,13 +46,5 @@ public class Opportunity extends Lead {
 
     public void setStatus(Status status) {
         this.status = status;
-    }
-
-    public Lead getLead() {
-        return lead;
-    }
-
-    public void setLead(Lead lead) {
-        this.lead = lead;
     }
 }

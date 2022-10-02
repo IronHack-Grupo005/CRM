@@ -23,7 +23,6 @@ public class Pantalla {
 
         System.out.println("Has escrito: " + tecla);
 
-        // TODO: asi comruebo que escriban lo correcto
         switch(tecla){
             case "1":
                 return 1;
@@ -35,7 +34,6 @@ public class Pantalla {
                 return 5;
         }
 
-        // TODO: Busco los textos
         if (tecla.toLowerCase().contains("show leads")) {
             return 21;
         } else if (tecla.toLowerCase().contains("lookup lead")) {
@@ -118,8 +116,6 @@ public class Pantalla {
         System.out.println("Escribe Empresa:");
         String companyName = key.nextLine();
 
-        // TODO: Check if OK
-
         Lead lead = new Lead(name, phoneNumber, email, companyName);
 
         Pantalla.menuLeadCreado(lead);
@@ -165,7 +161,7 @@ public class Pantalla {
         System.out.println("#################");
         System.out.println("Escoje uno: ");
         String tecla = key.nextLine();
-        // TODO: WORKING
+
 
 
         return 0;
