@@ -95,12 +95,6 @@ public class Pantalla {
         System.out.println(oppr.getIdentificador() + ". " +  oppr.getName());
 
     }
-    public static int returnLast(String s){
-        String search = s.substring(s.lastIndexOf(" ") + 1);
-        int number = 0;
-        number = Integer.parseInt(search);
-        return number;
-    }
     public static Lead menuNewLead(){
 
         Scanner key = new Scanner(System.in);
@@ -124,7 +118,6 @@ public class Pantalla {
 
         return lead;
     }
-
     public static int menuListaLeads(List<Lead> leads){
         System.out.println("\n");
         System.out.println("#################");
@@ -135,7 +128,7 @@ public class Pantalla {
         }
         return 0;
     }
-
+    /*
     public static int menuListaOppors(List<Opportunity> oppors){
         System.out.println("\n");
         System.out.println("#########################");
@@ -146,7 +139,6 @@ public class Pantalla {
         }
         return 0;
     }
-
     public static int menuListaOppor(List<Opportunity> oppor){
 
         Scanner key = new Scanner(System.in);
@@ -168,6 +160,7 @@ public class Pantalla {
 
         return 0;
     }
+    */
     public static int menuCancelLead(){
 
         Scanner key = new Scanner(System.in);
@@ -181,7 +174,6 @@ public class Pantalla {
         String tecla = key.nextLine();
         return 41;
     }
-
     public static void menuLeadCreado(Lead lead){
 
         System.out.println("\n\n");
@@ -190,15 +182,12 @@ public class Pantalla {
         System.out.println("#################");
         System.out.println(lead.getIdentificador() + ". " +  lead.getName());
     }
-
     public static void menuMuestraLead(Lead lead){
-
         System.out.println("\n\n");
         System.out.println("#################");
         System.out.println("El Lead mostrado desde la busueda es:");
         System.out.println(lead.getIdentificador() + ". " +  lead.getName());
     }
-
     public static Lead menuMuestraLeadAconvertir(Lead lead){
 
         System.out.println("\n\n");
@@ -217,7 +206,6 @@ public class Pantalla {
 
         return oppr;
     }
-
     public static void menuAdios(){
 
         System.out.println("\n\n");

@@ -33,7 +33,7 @@ public class CRM {
         while (accion != 5) {
 
             /* Las que o necesitan de menu */
-            if(accion != 21 || accion != 22 || accion != 41) {
+            if(accion != 21 || accion != 22  || accion != 23 || accion != 41) {
                 accion = Pantalla.menuPrincipal(this);
             }
             //System.out.println("Accion: " + accion);
@@ -88,6 +88,7 @@ public class CRM {
                     break;
             }
         }
+        Pantalla.menuAdios();
         return true;
 
     }
