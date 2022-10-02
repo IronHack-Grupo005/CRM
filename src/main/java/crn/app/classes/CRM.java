@@ -32,7 +32,7 @@ public class CRM {
         int accion = 0;
         while (accion != 5) {
 
-            /* Las que o necesitan de accion */
+            /* Las que o necesitan de menu */
             if(accion != 21 || accion != 22 || accion != 41) {
                 accion = Pantalla.menuPrincipal(this);
             }

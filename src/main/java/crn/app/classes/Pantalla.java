@@ -9,7 +9,7 @@ public class Pantalla {
 
         Scanner key = new Scanner(System.in);
 
-        System.out.println("\n\n\n");
+        System.out.println("\n\n");
         System.out.println("#################");
         System.out.println("Escoje opción:");
         System.out.println("1. Crear Lead:");
