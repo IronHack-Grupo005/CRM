@@ -15,7 +15,7 @@ public class Pantalla {
         System.out.println("1. Crear Lead:");
         System.out.println("2. Mostrar Leads");
         System.out.println("3. Convertir Lead");
-        System.out.println("4. Cancelar Lead:");
+        System.out.println("4. Cancelar Oportunidad:");
         System.out.println("5. Salir:");
         System.out.println("O escribe un comando:");
 
@@ -24,30 +24,21 @@ public class Pantalla {
         System.out.println("Has escrito: " + tecla);
 
         switch(tecla){
-            case "1":
-                return 1;
-            case "2":
-                return 2;
-            case "3":
-                return 3;
-            case "5":
-                return 5;
+            case "1": return 1;
+            case "2": return 2;
+            case "3": return 3;
+            case "4": return 4;
+            case "5": return 5;
         }
 
         if (tecla.toLowerCase().contains("show leads")) {
             return 21;
         } else if (tecla.toLowerCase().contains("lookup lead")) {
-            // TODO: Este tambien sale
-            menuMuestraLead(crm.getLead(returnLast(tecla) - 1));
             return 22;
         } else if (tecla.toLowerCase().contains("convert")) {
-            // TODO: Lo mismo que arriba
-            //returnLast(tecla)
-
             return 23;
-        } else {
-            System.out.println("No hay comando escrito");
         }
+
         return 0;
     }
 

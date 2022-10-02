@@ -14,7 +14,8 @@ import java.util.*;
 * 22. Resultado busqueda leadpor texto
 * 3. Convertir Lead
 * 23. Convertir lead
-* 3. Cancelar  LEad
+* 3. Listar Opportunidades
+* 4. Cancelar  Opportunidad
 * 5. Salir
 * X. Pedir datos LEad
 * */
@@ -32,7 +33,7 @@ public class CRM {
         while (accion != 5) {
 
             /* Las que o necesitan de accion */
-            if(accion != 21 || accion != 41) {
+            if(accion != 21 || accion != 22 || accion != 41) {
                 accion = Pantalla.menuPrincipal(this);
             }
             //System.out.println("Accion: " + accion);
@@ -50,13 +51,15 @@ public class CRM {
                     accion = Pantalla.menuListaLeads(this.leads);
                     break;
                 case 22:
-
+                    String tecla22 = Pantalla.menuPideA_Convertir(this.leads);
+                    Pantalla.menuMuestraLead(this.getLead(returnLast(tecla22) - 1));
+                    accion = 0 ;
                     break;
                 case 23:
                     /* Devolvemos string de lo escrito */
-                    String tecla = Pantalla.menuPideA_Convertir(this.leads);
+                    String tecla23 = Pantalla.menuPideA_Convertir(this.leads);
                     /* Cogemos la ultima parte u lo guardamos en objeto */
-                    Lead lead = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla) - 1));
+                    Lead lead = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla23) - 1));
 
                     Pantalla.menuMuestra_Convertir(lead);
 
@@ -64,6 +67,7 @@ public class CRM {
                     oppor.setStatus(Status.OPEN);
 
                     opors.add(oppor);
+                    accion = 0 ;
                     break;
                 case 4:
                     accion = Pantalla.menuCancelLead();
@@ -80,6 +84,7 @@ public class CRM {
                     Opportunity opporTemp = (Opportunity) oppr.clone();
                     opporTemp.setStatus(Status.CLOSED_LOST);
                     opors.add(opporTemp);
+                    accion = 0 ;
                     break;
             }
         }
