@@ -53,8 +53,9 @@ public class CRM {
 
                     break;
                 case 23:
-
+                    /* Devolvemos string de lo escrito */
                     String tecla = Pantalla.menuPideA_Convertir(this.leads);
+                    /* Cogemos la ultima parte u lo guardamos en objeto */
                     Lead lead = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla) - 1));
 
                     Pantalla.menuMuestra_Convertir(lead);
@@ -63,29 +64,25 @@ public class CRM {
                     oppor.setStatus(Status.OPEN);
 
                     opors.add(oppor);
-
                     break;
                 case 4:
                     accion = Pantalla.menuCancelLead();
                     break;
 
                 case 41 :
+                    /* Devolvemos string de lo escrito */
                     String tecla1 = Pantalla.menuPideA_Cancelar(this.opors);
-                    Lead lead1 = Pantalla.menuMuestraLeadAconvertir(this.getLead(returnLast(tecla1) - 1));
-
-                    // TODO: WORKING
-
-                    Pantalla.menuMuestra_Convertir(lead1);
-
-                    Opportunity oppor1 = (Opportunity) lead1.clone();
-                    oppor1.setStatus(Status.CLOSED_LOST);
-
-                    opors.add(oppor1);
+                    /* Cogemos la ultima parte u lo guardamos en objeto */
+                    Opportunity oppr = Pantalla.menuMuestraOpprAcancelar(this.getOppr(returnLast(tecla1) - 1));
+                    /* Mostraos a quien vamos a cancelar */
+                    Pantalla.menuMuestra_Cancelar(oppr);
+                    /* Temporal que despues añadimos */
+                    Opportunity opporTemp = (Opportunity) oppr.clone();
+                    opporTemp.setStatus(Status.CLOSED_LOST);
+                    opors.add(opporTemp);
                     break;
             }
-
         }
-
         return true;
 
     }
@@ -94,6 +91,9 @@ public class CRM {
         return this.leads.get(id);
     }
 
+    public Opportunity getOppr (int id){
+        return this.opors.get(id);
+    }
     public static int returnLast(String s){
         String search = s.substring(s.lastIndexOf(" ") + 1);
         int number = 0;

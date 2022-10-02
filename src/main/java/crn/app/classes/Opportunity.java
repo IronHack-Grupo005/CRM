@@ -20,30 +20,24 @@ public class Opportunity extends Lead {
            this.id++;
     }
 
-    public static long getId() {
-        return id;
-    }
-
-    public Product getIndustry() {
-        return industry;
-    }
-
-    public void setIndustry(Product industry) {
-        this.industry = industry;
-    }
-
     public Contact getDecisionMaker() {
         return decisionMaker;
     }
-
+    public static long getId() {
+        return id;
+    }
+    public Product getIndustry() {
+        return industry;
+    }
+    public void setIndustry(Product industry) {
+        this.industry = industry;
+    }
     public void setDecisionMaker(Contact decisionMaker) {
         this.decisionMaker = decisionMaker;
     }
-
     public Status getStatus() {
         return status;
     }
-
     public void setStatus(Status status) {
         this.status = status;
     }

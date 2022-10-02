@@ -89,8 +89,19 @@ public class Pantalla {
 
         System.out.println("\n");
         System.out.println("#################");
+        System.out.println("Vamos a convertir a:");
 
         System.out.println(lead.getIdentificador() + ". " +  lead.getName());
+
+    }
+    public static void menuMuestra_Cancelar(Opportunity oppr){
+        Scanner key = new Scanner(System.in);
+
+        System.out.println("\n");
+        System.out.println("#################");
+        System.out.println("Vamos a cancelar a:");
+
+        System.out.println(oppr.getIdentificador() + ". " +  oppr.getName());
 
     }
     public static int returnLast(String s){
@@ -205,6 +216,15 @@ public class Pantalla {
         System.out.println(lead.getIdentificador() + ". " +  lead.getName());
 
         return lead;
+    }
+    public static Opportunity menuMuestraOpprAcancelar(Opportunity oppr){
+
+        System.out.println("\n\n");
+        System.out.println("#################");
+        System.out.println("El Lead mostrado desde convertir es:");
+        System.out.println(oppr.getIdentificador() + ". " +  oppr.getName());
+
+        return oppr;
     }
 
     public static void menuAdios(){
